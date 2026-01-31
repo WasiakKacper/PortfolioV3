@@ -13,7 +13,7 @@ const Hero = () => {
           whileInView={{ transform: "translateY(0px)", opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="title font-semibold text-5xl text-center"
+          className="title font-semibold text-5xl lg:text-9xl text-center"
         >
           I BUILD <span className="text-(--action)">WEBSITES</span> THAT WORK
         </motion.h1>

@@ -27,10 +27,10 @@ const Header = () => {
         className="menu-hamburger w-8 h-7 flex flex-col justify-around cursor-pointer z-1000"
       >
         <span
-          className={`line bg-black w-full h-1 transition-all origin-center ${isActive ? " -rotate-45 translate-y-2" : ""}`}
+          className={`line w-full bg-black h-1 transition-all origin-center ${isActive ? " -rotate-45 translate-y-1.75 bg-white" : ""}`}
         ></span>
         <span
-          className={`line bg-black w-full h-1 transition-all origin-center ${isActive ? " rotate-45 -translate-y-2" : ""}`}
+          className={`line bg-black w-full h-1 transition-all origin-center ${isActive ? " rotate-45 -translate-y-1.75 bg-white" : ""}`}
         ></span>
       </motion.button>
       <nav
@@ -38,10 +38,28 @@ const Header = () => {
                     bg-(--action) transition-transform duration-300 z-100
                   ${isActive ? "translate-x-0" : "translate-x-full"}`}
       >
-        <ul className="p-5 w-full h-full text-5xl font-semibold flex flex-col justify-center gap-10 *:cursor-pointer *:w-auto *:hover:text-white">
-          <li>HOME</li>
-          <li>PROJECTS</li>
-          <li>ABOUT</li>
+        <ul className="p-5 w-full h-full text-5xl text-white font-semibold flex flex-col justify-center gap-10 *:cursor-pointer *:w-auto *:hover:text-(--foreground)">
+          <motion.li
+            initial={{ translateX: "50px" }}
+            whileInView={{ translateX: "0px" }}
+            transition={{ duration: 0.3, delay: 0.11 }}
+          >
+            HOME
+          </motion.li>
+          <motion.li
+            initial={{ translateX: "50px" }}
+            whileInView={{ translateX: "0px" }}
+            transition={{ duration: 0.3, delay: 0.14 }}
+          >
+            PROJECTS
+          </motion.li>
+          <motion.li
+            initial={{ translateX: "50px" }}
+            whileInView={{ translateX: "0px" }}
+            transition={{ duration: 0.3, delay: 0.16 }}
+          >
+            ABOUT
+          </motion.li>
         </ul>
       </nav>
     </header>
