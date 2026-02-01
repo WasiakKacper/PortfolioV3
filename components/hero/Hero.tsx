@@ -2,13 +2,18 @@
 
 import Header from "../ui/Header";
 import { motion } from "motion/react";
+import { useCursor } from "@/app/context/CursorContext";
 
 const Hero = () => {
+  const { setCursorVariant } = useCursor();
+
   return (
     <section className="hero-wrapper h-[90vh]">
       <Header />
-      <article className="hero-content w-auto h-[90%] min-h-20 tracking-tighter flex flex-col justify-center">
+      <article className="hero-contentd bg-white w-auto h-[90%] min-h-20 tracking-tighter flex flex-col justify-center">
         <motion.h1
+          onMouseEnter={() => setCursorVariant("action")}
+          onMouseLeave={() => setCursorVariant("default")}
           initial={{ transform: "translateY(100px)", opacity: 0 }}
           whileInView={{ transform: "translateY(0px)", opacity: 1 }}
           viewport={{ once: true }}

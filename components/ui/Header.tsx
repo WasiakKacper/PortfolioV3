@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { useCursor } from "@/app/context/CursorContext";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -8,6 +9,8 @@ const Header = () => {
   const hadleActivityToggle = () => {
     setIsActive(!isActive);
   };
+
+  const { setCursorVariant } = useCursor();
 
   return (
     <header className="hero-header p-3 flex items-center justify-between relative">
@@ -20,6 +23,8 @@ const Header = () => {
         KACPERWASIAK
       </motion.h3>
       <motion.button
+        onMouseEnter={() => setCursorVariant("action")}
+        onMouseLeave={() => setCursorVariant("default")}
         initial={{ transform: "translateY(-100px)", opacity: 0 }}
         animate={{ transform: "translateY(0px)", opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.3 }}

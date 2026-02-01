@@ -7,8 +7,10 @@ type ProjectProps = {
 import Image, { StaticImageData } from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { useCursor } from "@/app/context/CursorContext";
 
 const Project: React.FC<ProjectProps> = ({ url }) => {
+  const { setCursorVariant } = useCursor();
   const scrollRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -20,7 +22,11 @@ const Project: React.FC<ProjectProps> = ({ url }) => {
   const translateValue = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   return (
-    <article className="project bg-black relative w-full h-150 overflow-hidden flex flex-col justify-center">
+    <article
+      onMouseEnter={() => setCursorVariant("project")}
+      onMouseLeave={() => setCursorVariant("default")}
+      className="project bg-black relative w-full h-150 overflow-hidden flex flex-col justify-center"
+    >
       <h3 className="z-10 text-5xl pl-10 font-semibold text-white ">PROJECT</h3>
       <p className="z-10 text-2xl pl-10 text-white ">
         Example description text.

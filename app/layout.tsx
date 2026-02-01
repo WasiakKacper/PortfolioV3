@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
 
+import { ReactLenis } from "./utils/lenis";
+
 const jost = Jost({
   subsets: ["latin"],
   variable: "--font-jost",
@@ -19,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jost.className} antialiased`}>{children}</body>
+      <ReactLenis root>
+        <body className={`${jost.className} antialiased`}>{children}</body>
+      </ReactLenis>
     </html>
   );
 }
