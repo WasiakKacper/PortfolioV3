@@ -11,7 +11,7 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   title: "Kacper Wasiak - Frontend developer",
-  description: "Web developer portfolio",
+  description: "Frontend developer portfolio",
 };
 
 export default function RootLayout({
