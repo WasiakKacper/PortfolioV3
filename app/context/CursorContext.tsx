@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState } from "react";
 
-type CursorVariant = "default" | "project" | "action";
+type CursorVariant = "none" | "default" | "project" | "action";
 
 type CursorContextType = {
   cursorVariant: CursorVariant;

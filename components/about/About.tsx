@@ -1,10 +1,16 @@
 "use client";
 import { motion } from "motion/react";
+import { useCursor } from "@/app/context/CursorContext";
 
 const About = () => {
+  const { setCursorVariant } = useCursor();
+
   return (
     <>
-      <section className="about-wrapper h-screen flex flex-col justify-center items-center gap-4">
+      <section
+        id="about"
+        className="about-wrapper h-screen flex flex-col justify-center items-center gap-4"
+      >
         <motion.h3>About me</motion.h3>
         <motion.h2
           initial={{ transform: "translateY(100px)", opacity: 0 }}
@@ -36,8 +42,13 @@ const About = () => {
           }}
           transition={{ duration: 0.1 }}
         >
-          <a href="https://github.com/WasiakKacper" target="_blank">
-            github
+          <a
+            onMouseEnter={() => setCursorVariant("action")}
+            onMouseLeave={() => setCursorVariant("default")}
+            href="https://github.com/WasiakKacper"
+            target="_blank"
+          >
+            check out my github
           </a>
         </motion.button>
       </footer>

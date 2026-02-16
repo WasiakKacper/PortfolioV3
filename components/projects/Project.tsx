@@ -2,6 +2,9 @@
 
 type ProjectProps = {
   url: StaticImageData;
+  name: string;
+  description: string;
+  click: () => void;
 };
 
 import Image, { StaticImageData } from "next/image";
@@ -9,7 +12,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { useCursor } from "@/app/context/CursorContext";
 
-const Project: React.FC<ProjectProps> = ({ url }) => {
+const Project: React.FC<ProjectProps> = ({ url, name, description, click }) => {
   const { setCursorVariant } = useCursor();
   const scrollRef = useRef(null);
 
@@ -22,23 +25,32 @@ const Project: React.FC<ProjectProps> = ({ url }) => {
   const translateValue = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   return (
-    <article
-      onMouseEnter={() => setCursorVariant("project")}
-      onMouseLeave={() => setCursorVariant("default")}
-      className="project bg-black relative w-full h-150 overflow-hidden flex flex-col justify-center"
-    >
-      <h3 className="z-10 text-5xl pl-10 font-semibold text-white ">PROJECT</h3>
-      <p className="z-10 text-2xl pl-10 text-white ">
-        Example description text.
-      </p>
-      <motion.div
-        ref={scrollRef}
-        style={{ opacity: opacityValue, translateY: translateValue }}
-        className="absolute left-0 -top-[50%] w-full h-[120%]"
+    <>
+      <motion.article
+        onMouseEnter={() => setCursorVariant("project")}
+        onMouseLeave={() => setCursorVariant("default")}
+        onClick={click}
+        className="project bg-black relative w-full h-150 overflow-hidden flex flex-col justify-center"
       >
-        <Image src={url} alt="portfolio" fill className="object-cover" />
-      </motion.div>
-    </article>
+        <h3 className="z-10 text-5xl pl-10 font-semibold text-white ">
+          {name}
+        </h3>
+        <p className="z-10 text-2xl pl-10 text-white ">{description}</p>
+        <motion.div
+          ref={scrollRef}
+          style={{ opacity: opacityValue, translateY: translateValue }}
+          className="absolute left-0 -top-[50%] w-full h-[120%]"
+        >
+          <Image
+            preload={true}
+            src={url}
+            alt="portfolio"
+            fill
+            className="object-cover"
+          />
+        </motion.div>
+      </motion.article>
+    </>
   );
 };
 

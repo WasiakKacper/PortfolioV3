@@ -10,7 +10,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Kacper Wasiak - Web developer",
+  title: "Kacper Wasiak - Frontend developer",
   description: "Web developer portfolio",
 };
 
