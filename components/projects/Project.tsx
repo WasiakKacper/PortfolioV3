@@ -1,4 +1,8 @@
 "use client";
+import Image, { StaticImageData } from "next/image";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+import { useCursor } from "@/app/context/CursorContext";
 
 type ProjectProps = {
   url: StaticImageData;
@@ -7,13 +11,8 @@ type ProjectProps = {
   click: () => void;
 };
 
-import Image, { StaticImageData } from "next/image";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
-import { useCursor } from "@/app/context/CursorContext";
-
 const Project: React.FC<ProjectProps> = ({ url, name, description, click }) => {
-  const { setCursorVariant } = useCursor();
+  //Set up for "deep" animation
   const scrollRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -24,11 +23,23 @@ const Project: React.FC<ProjectProps> = ({ url, name, description, click }) => {
   const opacityValue = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
   const translateValue = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
+  //Change cursor variant on mouse event
+  const { setCursorVariant } = useCursor();
+
+  const handleMouseEnter = () => {
+    setCursorVariant("project");
+  };
+
+  const handleMouseLeave = () => {
+    setCursorVariant("default");
+  };
+
   return (
     <>
-      <motion.article
-        onMouseEnter={() => setCursorVariant("project")}
-        onMouseLeave={() => setCursorVariant("default")}
+      <article
+        data-cursor="project"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         onClick={click}
         className="project bg-black relative w-full h-150 overflow-hidden flex flex-col justify-center"
       >
@@ -49,7 +60,7 @@ const Project: React.FC<ProjectProps> = ({ url, name, description, click }) => {
             className="object-cover"
           />
         </motion.div>
-      </motion.article>
+      </article>
     </>
   );
 };

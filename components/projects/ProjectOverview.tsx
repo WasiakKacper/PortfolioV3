@@ -1,77 +1,71 @@
-type ProjectOverviewProps = {
-  name: string;
-  url: StaticImageData;
-  description: string;
-  gitHubUrl: string;
-  siteUrl: string;
-  isModalOpen: boolean;
-};
-
 import Image, { StaticImageData } from "next/image";
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
+interface ProjectData {
+  name: string;
+  url: StaticImageData;
+  descriptionModal: string;
+  gitHubUrl: string;
+  siteUrl: string;
+}
+
+type ProjectOverviewProps = {
+  project: ProjectData | null;
+  onClose: () => void;
+};
+
 const ProjectOverview: React.FC<ProjectOverviewProps> = ({
-  name,
-  url,
-  description,
-  gitHubUrl,
-  siteUrl,
-  isModalOpen,
+  project,
+  onClose,
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsOpen(isModalOpen);
-  }, [isModalOpen]);
-
-  const handleCloseModal = () => {
-    setIsOpen(!isOpen);
-  };
+  if (!project) return null;
 
   const variants = {
-    open: { scale: 1 },
-    closed: { scale: 0 },
+    initial: { scale: 0.9, opacity: 0, x: "-50%", y: "-50%" },
+    animate: { scale: 1, opacity: 1, x: "-50%", y: "-50%" },
+    exit: { scale: 0.8, opacity: 0, x: "-50%", y: "-50%" },
   };
 
   return (
     <motion.dialog
       variants={variants}
-      animate={isOpen ? "open" : "closed"}
-      open={isOpen}
-      className="w-[90vw] h-[90vh] bg-black z-20 fixed top-[50%] left-[50%] -translate-[50%] rounded-xl"
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      open={!!project}
+      className="w-[90vw] h-[90vh] bg-black z-20 fixed top-[50%] left-[50%] rounded-xl"
     >
       <article className="relative w-full h-full p-4 flex flex-col justify-between">
         <Image
           preload={true}
-          src={url}
+          src={project.url}
           alt="portfolio"
           fill
           className="absolute object-cover rounded-xl opacity-50 -z-1 pointer-events-none"
         />
         <header className="flex justify-between">
           <h2 className="text-3xl font-bold text-white">
-            {name.toUpperCase()}
+            {project.name.toUpperCase()}
           </h2>
           <button
             className="text-3xl font-bold text-white"
             aria-label="close"
-            onClick={handleCloseModal}
+            onClick={onClose}
           >
             X
           </button>
         </header>
         <section className="flex flex-col lg:flex-row justify-between w-full h-[40%] *:text-white">
-          <p className="text-2xl w-[50%]">{description}</p>
+          <p className="text-2xl w-[50%]">{project.descriptionModal}</p>
           <nav className="flex w-full lg:w-[50%] justify-center items-center gap-10">
             <a
-              href={gitHubUrl}
+              href={project.gitHubUrl}
               className="bg-(--action) w-[90%] lg:w-[25%] p-2 text-center text-2xl rounded-xl"
             >
               GITHUB
             </a>
             <a
-              href={siteUrl}
+              href={project.siteUrl}
               className="bg-(--action) w-[90%] lg:w-[25%] p-2 text-center text-2xl rounded-xl"
             >
               SITE

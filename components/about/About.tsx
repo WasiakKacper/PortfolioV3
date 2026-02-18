@@ -1,9 +1,15 @@
 "use client";
+
 import { motion } from "motion/react";
 import { useCursor } from "@/app/context/CursorContext";
 
 const About = () => {
   const { setCursorVariant } = useCursor();
+
+  const aboutVariants = {
+    hidden: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
   return (
     <>
@@ -13,8 +19,9 @@ const About = () => {
       >
         <motion.h3>About me</motion.h3>
         <motion.h2
-          initial={{ transform: "translateY(100px)", opacity: 0 }}
-          whileInView={{ transform: "translateY(0px)", opacity: 1 }}
+          variants={aboutVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-6xl font-semibold text-center px-5"
@@ -22,8 +29,9 @@ const About = () => {
           WHO IS <span className="text-(--action)">THIS</span> GUY?
         </motion.h2>
         <motion.p
-          initial={{ transform: "translateY(100px)", opacity: 0 }}
-          whileInView={{ transform: "translateY(0px)", opacity: 1 }}
+          variants={aboutVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
           className="text-xl text-left text-(--lighter) w-[80%] lg:w-[60%]"

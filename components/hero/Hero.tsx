@@ -12,8 +12,9 @@ const Hero = () => {
 
   return (
     <section className="hero-wrapper h-[90vh]">
-      <article className="hero-content bg-white w-auto h-[90%] min-h-20 tracking-tighter flex flex-col justify-center">
+      <article className="hero-content bg-white w-auto h-[90%] min-h-20 tracking-tighter flex flex-col justify-center items-center">
         <motion.h1
+          data-cursor="action"
           onMouseEnter={() => setCursorVariant("action")}
           onMouseLeave={() => setCursorVariant("default")}
           variants={heroVariants}
@@ -21,7 +22,7 @@ const Hero = () => {
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="title font-semibold text-5xl lg:text-9xl text-center"
+          className="title font-semibold text-5xl lg:text-8xl text-center w-[80%]"
         >
           I BUILD <span className="text-(--action)">WEBSITES</span> THAT WORK
         </motion.h1>
