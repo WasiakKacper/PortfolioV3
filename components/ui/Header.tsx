@@ -64,6 +64,7 @@ const Header = () => {
         KACPERWASIAK
       </motion.h3>
       <motion.button
+        data-cursor="action"
         onMouseEnter={() => setCursorVariant("action")}
         onMouseLeave={() => setCursorVariant("default")}
         variants={headerVariants}

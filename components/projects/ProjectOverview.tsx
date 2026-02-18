@@ -56,20 +56,24 @@ const ProjectOverview: React.FC<ProjectOverviewProps> = ({
           </button>
         </header>
         <section className="flex flex-col lg:flex-row justify-between w-full h-[40%] *:text-white">
-          <p className="text-2xl w-[50%]">{project.descriptionModal}</p>
-          <nav className="flex w-full lg:w-[50%] justify-center items-center gap-10">
+          <p className="text-2xl lg:w-[50%] p-5">{project.descriptionModal}</p>
+          <nav className="flex w-full lg:w-[50%] justify-end items-end gap-10 font-semibold">
             <a
               href={project.gitHubUrl}
-              className="bg-(--action) w-[90%] lg:w-[25%] p-2 text-center text-2xl rounded-xl"
+              className="bg-(--action) w-[90%] lg:w-[25%] p-2 text-center text-2xl rounded-sm"
             >
               GITHUB
             </a>
-            <a
-              href={project.siteUrl}
-              className="bg-(--action) w-[90%] lg:w-[25%] p-2 text-center text-2xl rounded-xl"
-            >
-              SITE
-            </a>
+            {project.siteUrl != "" ? (
+              <a
+                href={project.siteUrl}
+                className="bg-(--action) w-[90%] lg:w-[25%] p-2 text-center text-2xl rounded-sm"
+              >
+                SITE
+              </a>
+            ) : (
+              <></>
+            )}
           </nav>
         </section>
       </article>

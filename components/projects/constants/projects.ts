@@ -18,7 +18,8 @@ export const PROJECT_DATA: ProjectData[] = [
     id: 0,
     name: "Portfolio",
     url: Mockup1,
-    descriptionModal: "Example text...",
+    descriptionModal:
+      "Example text for description which should tell us whats is that site is and how works",
     description: "Example text for description",
     gitHubUrl: "#",
     siteUrl: "#",
