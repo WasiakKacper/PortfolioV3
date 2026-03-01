@@ -54,7 +54,7 @@ const Header = () => {
   };
 
   return (
-    <header className="hero-header p-3 flex items-center justify-between relative">
+    <header className="hero-header p-10 flex items-center justify-between relative">
       <motion.h3
         variants={headerVariants}
         initial="hidden"
@@ -74,7 +74,7 @@ const Header = () => {
         className={`
     menu-hamburger w-8 h-7 flex flex-col justify-around cursor-pointer
     z-1000
-    ${isActive ? "fixed top-4 right-4" : "relative"}
+    ${isActive ? "fixed top-10 right-10" : "relative"}
   `}
       >
         <span
