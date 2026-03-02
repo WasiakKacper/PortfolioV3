@@ -41,12 +41,10 @@ const Project: React.FC<ProjectProps> = ({ url, name, description, click }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onClick={click}
-        className="project bg-black relative w-full h-150 overflow-hidden flex flex-col justify-center"
+        className="project bg-black relative w-full h-150 overflow-hidden flex flex-col justify-center text-white"
       >
-        <h3 className="z-10 text-5xl pl-10 font-semibold text-white ">
-          {name}
-        </h3>
-        <p className="z-10 text-2xl pl-10 text-white ">{description}</p>
+        <h3 className="z-10 text-5xl pl-10 font-semibold">{name}</h3>
+        <p className="z-10 w-[90%] lg:w-full text-2xl pl-10">{description}</p>
         <motion.div
           ref={scrollRef}
           style={{ opacity: opacityValue, translateY: translateValue }}
