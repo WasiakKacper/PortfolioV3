@@ -19,7 +19,7 @@ export const PROJECT_DATA: ProjectData[] = [
     name: "Portfolio",
     url: PortfolioMockup,
     descriptionModal:
-      "A high-performance portfolio site designed to showcase my work through a clean and intuitive interface. Developed with Next.js, TypeScript, and Tailwind CSS, focusing on sleek aesthetics and optimal user experience.",
+      "This portfolio site was designed to showcase my work through a clean and intuitive interface. Built using Next.js, TypeScript, and Tailwind CSS, with a focus on elegance and an optimal user experience.",
     description: "Clean project showcase. Powered by Next.js",
     gitHubUrl: "https://github.com/WasiakKacper/PortfolioV3",
     siteUrl: "https://kacper-wasiak.netlify.app/",
@@ -38,7 +38,7 @@ export const PROJECT_DATA: ProjectData[] = [
     name: "Control",
     url: ControlMockup,
     descriptionModal:
-      "This portfolio is an ongoing project focused on clean code and intuitive UI. Developed with React and TypeScript, it emphasizes stability and developer experience, while SASS provides full control over the visual layer. It’s a transparent look into my development process, showcasing my commitment to modern web standards.",
+      "Control is a work-in-progress project focused on clean code and an intuitive user interface. Built in React, TypeScript, and SASS, Control will be a task management application that will allow you to track your progress across several widgets.",
     description: "React, TypeScript & SASS (Work in progress)",
     gitHubUrl: "https://github.com/WasiakKacper/Control",
     siteUrl: "",
