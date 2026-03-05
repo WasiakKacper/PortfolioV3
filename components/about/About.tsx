@@ -56,7 +56,7 @@ const About = () => {
             href="https://github.com/WasiakKacper"
             target="_blank"
           >
-            check out my github
+            check out my github for more code
           </a>
         </motion.button>
       </footer>
