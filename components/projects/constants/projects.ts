@@ -41,6 +41,6 @@ export const PROJECT_DATA: ProjectData[] = [
       "Control is a work-in-progress project focused on clean code and an intuitive user interface. Built in React, TypeScript, and SASS, Control will be a task management application that will allow you to track your progress across several widgets.",
     description: "React, TypeScript & SASS (Work in progress)",
     gitHubUrl: "https://github.com/WasiakKacper/Control",
-    siteUrl: "",
+    siteUrl: "https://control-trackers.netlify.app",
   },
 ];
