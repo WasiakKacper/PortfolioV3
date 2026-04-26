@@ -2,6 +2,7 @@ import { StaticImageData } from "next/image";
 
 import PortfolioMockup from "../../../public/images/Portfolio_Mockup.jpg";
 import ControlMockup from "../../../public/images/Control_Mockup.jpg";
+import FabrykaWarzyw from "../../../public/images/FabrykaWarzyw_Mockup_3.jpg";
 
 interface ProjectData {
   id: number;
@@ -24,15 +25,17 @@ export const PROJECT_DATA: ProjectData[] = [
     gitHubUrl: "https://github.com/WasiakKacper/PortfolioV3",
     siteUrl: "https://kacper-wasiak.netlify.app/",
   },
-  /*  {
+  {
     id: 1,
     name: "Fabryka warzyw",
-    url: Mockup2,
-    descriptionModal: "Example text...",
-    description: "Example text for description",
-    gitHubUrl: "#",
-    siteUrl: "#",
-  }, */
+    url: FabrykaWarzyw,
+    descriptionModal:
+      "Custom e-commerce platform built with Next.js, TypeScript, and Tailwind CSS. Designed with a focus on performance, scalability, and a minimalist user interface to drive engagement and simplify the checkout experience.",
+    description:
+      "Modern retail experience showcase. Built with React & Tailwind",
+    gitHubUrl: "https://github.com/WasiakKacper/Fabryka_Warzywa_OnePage",
+    siteUrl: "https://fabrykawarzyw.pl/",
+  },
   {
     id: 2,
     name: "Control",
@@ -41,6 +44,6 @@ export const PROJECT_DATA: ProjectData[] = [
       "Control is a work-in-progress project focused on clean code and an intuitive user interface. Built in React, TypeScript, and SASS, Control will be a task management application that will allow you to track your progress across several widgets.",
     description: "React, TypeScript & SASS (Work in progress)",
     gitHubUrl: "https://github.com/WasiakKacper/Control",
-    siteUrl: "",
+    siteUrl: "https://control-trackers.netlify.app/",
   },
 ];
