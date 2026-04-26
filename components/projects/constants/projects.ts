@@ -24,15 +24,17 @@ export const PROJECT_DATA: ProjectData[] = [
     gitHubUrl: "https://github.com/WasiakKacper/PortfolioV3",
     siteUrl: "https://kacper-wasiak.netlify.app/",
   },
-  /*  {
-    id: 1,
+  {
+      id: 1,
     name: "Fabryka warzyw",
-    url: Mockup2,
-    descriptionModal: "Example text...",
-    description: "Example text for description",
-    gitHubUrl: "#",
-    siteUrl: "#",
-  }, */
+    url: FabrykaWarzyw,
+    descriptionModal:
+      "Custom e-commerce platform built with Next.js, TypeScript, and Tailwind CSS. Designed with a focus on performance, scalability, and a minimalist user interface to drive engagement and simplify the checkout experience.",
+    description:
+      "Modern retail experience showcase. Built with React & Tailwind",
+    gitHubUrl: "https://github.com/WasiakKacper/Fabryka_Warzywa_OnePage",
+    siteUrl: "https://fabrykawarzyw.pl/",
+  },
   {
     id: 2,
     name: "Control",
