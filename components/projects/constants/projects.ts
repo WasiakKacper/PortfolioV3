@@ -1,8 +1,8 @@
 import { StaticImageData } from "next/image";
 
-import PortfolioMockup from "../../../public/images/Portfolio_Mockup.jpg";
-import ControlMockup from "../../../public/images/Control_Mockup.jpg";
-import FabrykaWarzyw from "../../../public/images/FabrykaWarzyw_Mockup_3.jpg";
+import PortfolioMockup from "@/assets/images/Portfolio_Mockup.jpg";
+import ControlMockup from "@/assets/images/Control_Mockup.jpg";
+import FabrykaWarzyw from "@/assets/images/FabrykaWarzyw_Mockup_3.jpg";
 
 interface ProjectData {
   id: number;
